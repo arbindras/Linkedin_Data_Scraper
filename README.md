@@ -1,6 +1,8 @@
-1. Overview
+# Linkedin_Data_Scraper
+#1. Overview
+
 The LinkedIn Data Scraper project is designed to extract specific information from a LinkedIn profile using the LinkedIn Bulk Data Scraper API. The extracted data, specifically the companies associated with the profile, is then stored in a MySQL database for further use or analysis.
-2. Workflow
+#2. Workflow
 Step 1: API Request
 •	A POST request is made to the LinkedIn Bulk Data Scraper API with the LinkedIn profile link provided as input.
 •	The API returns a JSON response containing various details about the profile, including work experiences, education, skills, and more.
@@ -14,7 +16,8 @@ Step 4: Data Insertion
 •	The database connection is then closed after the operation is complete.
 Step 5: Output
 •	The script prints a success message once the data has been successfully inserted into the database.
-3. Database Schema
+
+#3. Database Schema
 Table: linkedin_data
 Column Name	Data Type	Description
 id	INT (Primary Key, Auto Increment)	Unique identifier for each record
@@ -28,7 +31,8 @@ CREATE TABLE IF NOT EXISTS linkedin_data (
     company_id INT,
     company_linkedin_url TEXT
 );
-4. Assumptions and Considerations
+#4. Assumptions and Considerations
+
 •	API Key and Host: The script assumes that a valid API key and host for the LinkedIn Bulk Data Scraper API are provided.
 •	Database Connection: The script assumes that the MySQL database is hosted locally (127.0.0.1) and that the credentials (root, Arb1ndr@) are valid for the test database.
 •	Data Integrity: Only records with both companyId and companyLink1 are inserted into the database. This ensures that incomplete data does not populate the database.
@@ -40,12 +44,9 @@ Prerequisites
 •	Required Python libraries:
 o	requests
 o	mysql.connector
-Running the Script
+# Running the Script
 1.	Install the required Python libraries:
 pip install requests mysql-connector-python
 2.	Run the Python script:
 python linkedin_data_scraper.py
 3.	Check the MySQL database to verify that the data has been inserted correctly.
-6. Video Demonstration
-A video demonstration of the entire workflow, including code explanation and database interaction, is available (Video Link)
-# Linkedin_Data_Scraper
