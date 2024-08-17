@@ -23,7 +23,7 @@ if response.status_code == 200:
     conn = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        password="Arb1ndr@",
+        password="****",
         database="test"
     )
 
